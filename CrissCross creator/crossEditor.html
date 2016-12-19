@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+        <script src="js/jquery.crossword.js"></script>
+        <script src="js/script.js"></script>
+        <script src="js/check.js"></script>
+        <script type="text/javascript" src="java.js"></script>
+        <link type="text/css" rel="stylesheet" href="style.css" media="screen">
+    </head>
+    <body>
+        <input required id="kyW" type="text" placeholder="Schlüsselwort" name="Schlüsselwort" oninput="keyWord(this.value);createInputFields(this.value.length);"  onkeypress="return checkSpecialChars(event)"><!--Länge des value an die function -->
+        <div id="ansDivContainer"></div>
+        
+        <input id="test" type="text" oninput="loadDoc(this.value)">
+        <label id="lblTest">Hallo</label>
+        
+        <button onclick="crossGeneration()">generate</button>
+        
+        <div id="puzzle-wrapper"></div>
+    </body>
+</html>
