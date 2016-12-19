@@ -1,4 +1,4 @@
-function loadDoc(str) {
+function loadDoc(str, ident) {
     var xhttp;
     if (str.length == 0) { 
         document.getElementById("lblTest").innerHTML = "";
@@ -7,9 +7,10 @@ function loadDoc(str) {
     xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            document.getElementById("lblTest").innerHTML = this.responseText;
+        }else{
+            alert('Internal Server Error');
         }
     };
-    xhttp.open("GET", "http://localhost/crisscross.php?value="+str, true);
+    xhttp.open("GET", "http://localhost/crisscross.php?value="+str+"&id="+ident, true);
     xhttp.send();
 }        

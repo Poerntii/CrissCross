@@ -5,6 +5,7 @@ var kWordLength;
 //Hlot sich das Keyword und speicher es in einen String
 function keyWord(value){
     keyW = value;
+    alert('Hallo');
 }
 //Erstellt Input Felder entsprechend der Buchstaben des Keywords
 function createInputFields(keyWordLength){
@@ -29,7 +30,7 @@ function createInputFields(keyWordLength){
             var element = document.createElement("input");
             element.className = "ansBox";
             element.id = count;
-            element.setAttribute("oninput", "checkWords(this.value, this.id)");
+            element.setAttribute("oninput", "loadDoc(this.value,this.id)");
             ansDiv.appendChild(element);
             
             var checkElement = document.createElement("img");
@@ -70,26 +71,6 @@ function checkOnChange(){
             }
         }
     }else{}
-}
-//Checkt ob ein antwort Buchstabe mit einem Buchstaben des Keywords übereinstimmt
-function checkWords(value, idLable){
-    if(value != null){
-        wordArray = Array.from(value);
-        var matchArray=[];
-        var activeOK = false;
-        document.querySelector('#lable'+idLable).src = "pictures/not.png"
-        for (i = 0; i< value.length; i++){
-            var matches = keyW.toLowerCase().match(wordArray[i].toLowerCase());
-            matchArray[i] = matches;
-            if(matchArray[i] !== null){
-                document.querySelector('#lable'+idLable).src = "pictures/ok.png"
-                activeOK = true;
-            }if(activeOK != true){
-                document.querySelector('#lable'+idLable).src = "pictures/not.png"
-            }
-        }
-    }else{
-    }
 }
 //Blockiert Nummern und Satzzeichen
 function checkSpecialChars(evt) { 

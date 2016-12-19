@@ -11,9 +11,6 @@
         <input required id="kyW" type="text" placeholder="Schlüsselwort" name="Schlüsselwort" oninput="keyWord(this.value);createInputFields(this.value.length);"  onkeypress="return checkSpecialChars(event)"><!--Länge des value an die function -->
         <div id="ansDivContainer"></div>
         
-        <input id="test" type="text" oninput="loadDoc(this.value)">
-        <label id="lblTest">Hallo</label>
-        
         <button onclick="crossGeneration()">generate</button>
         
         <div id="puzzle-wrapper"></div>
